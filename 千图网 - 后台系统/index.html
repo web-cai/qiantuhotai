@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#tai{
+				width: 100%;
+				height: 100%;
+				background: black;
+				position: absolute;
+				top: 0;
+				z-index: 2;
+				opacity: 0.6;
+			}
+			#deng{
+				width: 400px;
+				height: 200px;
+				/*border: 1px solid black;*/
+				box-shadow: 0 0 0 1px red;
+				margin: 200px auto;
+			}
+			#deng>input{
+				margin-left:75px ;
+				margin-top:15px ;
+				font-size: 22px;
+				width: 250px;
+				height: 40px;
+			}
+			#deng>button{
+				width: 200px;
+				height: 50px;
+				background: greenyellow;
+				text-align: center;
+				line-height: 50px;
+				font-size:24px ;
+				border-radius: 25px;
+				border: 0px;
+				margin-top: 10px;
+				margin-left: 100px;
+			}
+			.rong{
+				width: 100%;
+				height: 100%;
+				background: white;
+				position: absolute;
+				top: 0;
+			}
+			.daohang{
+				width: 94%;
+				height: 50px;
+				margin: 0 auto;
+				display: flex;
+				align-items: center;
+			}
+			.daohang>p:first-child{
+				width: 10%;
+				height: 50px;
+				background: blue;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.daohang>p:first-child>img{
+				width: 75%;
+				height: 60%;				
+			}
+			.daohang>p:nth-child(2){
+				margin-left:3%;
+				width: 62%;
+			}
+			.daohang>p:nth-child(2)>img{
+				height: 30px;
+			}
+			.daohang>p:nth-child(3){
+				display: flex;
+                align-items: center;				
+                height: 50px;
+                vertical-align: middle;
+			}
+			.daohang>p:nth-child(3)>img{
+				margin-right: 15px;
+			}
+			.daohang>p:nth-child(4)>img{
+				margin-right: 15px;
+			}
+			.daohang>p:nth-child(4){
+				margin-left: 20px;
+				display: flex;
+                align-items: center;
+				height: 50px;
+				vertical-align: middle;
+			}
+			.xia{
+				width: 94%;
+				margin: 0 auto;
+				background: #ECF2FE;
+				display: flex;
+			}
+			.left{
+				width: 10%;
+				height:700px;
+				background: #00152A;
+			}
+			.left>ul{
+				padding-top: 20px;
+			}
+			.left>ul>li{
+				text-align: center;
+			}
+			.left>ul:first-child>li:last-child{
+				margin-top: 3px;
+				color: white;
+			}
+			.left>ul:last-child>li:last-child{
+				margin-top: 3px;
+				color: #4C5B68;
+			}
+			.left>ul>li>img{
+				background: white;
+			}
+			.right{
+				width: 85%;
+				margin-left:2%;
+			}
+			#shang{
+				height: 70px;
+				display: flex;
+				align-items: center;
+			}
+			#shang>p:first-child{
+				vertical-align:middle;
+				width: 90%;
+			}
+			#shang>p:last-child{
+				height: 40px;
+				width: 10%;
+				background: #53C31A;
+				border-radius: 20px;
+				text-align: center;
+				line-height: 40px;
+				color: white;
+			}
+			#shang>p>span:first-child{
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				border-radius: 5px;
+				box-shadow: 0 0 0 1px gray;
+				background: url(img/矩形-28-拷贝.png) no-repeat center;
+			}
+			#xia{
+				width: 100%;
+				/*height: 600px;*/
+				background: white;
+				border-radius: 6px;
+			}
+			#xia>ul{
+				height: 100px;
+				display: flex;
+				align-items: center;
+				border-bottom:1px solid gainsboro;
+				justify-content: space-around;
+			}
+			#xia>ul:last-child{
+				border: 0px;
+			}
+			#xia>ul>li{
+				vertical-align: middle;
+			}
+			#xia>ul>li:first-child{
+				width: 20px;
+				height: 20px;
+				text-align:center;
+				line-height: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 0 1px gray;
+				background: #EEF1F5;
+			}
+			#xia>ul>li:nth-child(3)>p:last-child{
+				margin-top: 2px;
+				color: gray;
+			}
+			#xia>ul>li:nth-child(4)>img{
+				margin-right:10px; 
+				vertical-align: middle;
+			}
+			#xia>ul>li:nth-child(5)>img{
+				margin-right:10px; 
+				vertical-align: middle;
+			}
+			#xia>ul>li:nth-child(6)>img{
+				margin-right:10px; 
+				vertical-align: middle;
+			}
+			/*#xia>ul:nth-child(2)>li:nth-child(3)>p:last-child>span{
+				width: 60px;
+				height: 20px;
+				color: gray;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 0 2px gray;
+			}
+			#xia>ul:nth-child(3)>li:nth-child(3)>p:last-child>span{
+				width: 60px;
+				height: 20px;
+				color: green;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 0 2px green;
+			}*/
+			/*#xia>ul>li:nth-child(3)>p:last-child>span{
+				display: inline-block;
+				color: orange;
+				width: 60px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 0 2px orange;
+				margin-left: 5px;
+			}*/
+			.span{
+				display: inline-block;
+				width: 60px;
+				height: 20px;
+				color: gray;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 0 2px gray;
+				margin-left: 5px;
+			}
+	        .span1{
+	        	display: inline-block;
+				width: 60px;
+				height: 20px;
+				color: green;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 0 2px green;
+				margin-left: 5px;
+			}
+			.span2{
+				display: inline-block;
+				color: orange;
+				width: 60px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 0 2px orange;
+				margin-left: 5px;
+			}
+			#xia>ul>li:nth-child(3)>p:first-child{
+				margin-bottom: 7px;
+			}
+			#xia>ul>li:nth-child(7){
+				width: 65px;
+				color: red;
+			}
+			#xia>ul>li:nth-child(7)>p>img{				
+				vertical-align: middle;
+			}
+			.p{
+				display: none;
+			}
+			#xia>ul>li:last-child{
+				width: 50px;
+				height: 25px;
+				color: blue;
+			}
+			.li2{				
+				width: 50px;
+				height: 25px;
+				border-radius:12.5px;
+				background: blue;
+				color: white !important;
+				text-align: center;
+				line-height: 25px;
+			}
+			.li1{
+				color: blue;
+			}
+			.lii:hover{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div id="tai">
+			<div id="deng">
+				<input type="text" name="" id="" value="" placeholder="请输入账号"/>
+				<input type="password" name="" id="" value="" placeholder="密码"/>
+				<button>登录</button>
+			</div>
+		</div>-->
+		<div class="rong">
+			<div class="daohang">
+				<p><img src="img/LOGO.png"/></p>
+				<p><img src="img/图层-2.png"/></p>
+				<p><img src="img/主页.png"/><span>系统首页</span></p>
+				<p><img src="img/后台_03.png"/><span class="span">文案</span></p>
+			</div>
+			<div class="xia">
+				<div class="left">
+					<ul>
+						<li><img src="img/后台_07.png"/></li>
+						<li class="aa">侧边导航</li>
+					</ul>
+					<ul>
+						<li><img src="img/后台07.png"/></li>
+						<li class="bb">侧边导航</li>
+					</ul>
+				</div>
+				<div class="right">
+					<div id="shang">
+						<p><span></span> 标题文字</p>
+						<p class="jian">+新建按钮</p>
+					</div>
+					<div id="xia">
+						<ul>
+							<li>1</li>
+							<li><img src="img/后台_03.jpg"/></li>
+							<li class="sj">								
+								<p>标题文字标题文字标题文字标题文字</p>						 
+						        <p>开始时间:2019/10/14/ (40天) <span class="sj" style="display: inline-block;color: orange;width: 60px;height: 20px;text-align: center;line-height: 20px;border-radius: 10px;box-shadow: 0 0 0 2px orange;margin-left: 5px;">进行中</span></p>
+							</li>
+							<li><img src="img/员工账号管理.png"/ > <span>21人</span></li>
+							<li><img src="img/邀请.png"/> <span>邀请</span></li>
+							<li><img src="img/企业图谱.png"/ > <span>文件按钮</span></li>
+							<li>					
+								<p class="p"><img src="img/shan.png"/ style="margin-right:10px;"><span>删除</span></p>								
+							</li>
+							<li class="lii">管理</li>
+						</ul>
+						<!--<ul>
+							<li>2</li>
+							<li><img src="img/后台_06.jpg"/></li>
+							<li>								
+								<p>标题文字标题文字标题文字标题文字</p>
+								<p>开始时间:2019/10/14/ (40天) <span>未开始</span></p>
+							</li>
+							<li><img src="img/员工账号管理.png"/ style="margin-right:10px; vertical-align: middle;"> <span>21人</span></li>
+							<li><img src="img/邀请.png"/ style="margin-right:10px; vertical-align: middle;"> <span>邀请</span></li>
+							<li><img src="img/企业图谱.png"/ style="margin-right:10px; vertical-align: middle;"> <span>文件按钮</span></li>
+							<li>					
+								<p class="p"><img src="img/shan.png"/ style="margin-right:10px;">删除</p>								
+							</li>
+							<li class="lii">管理</li>
+						</ul>
+						<ul>
+							<li>4</li>
+							<li><img src="img/后台_09.jpg"/></li>
+							<li>								
+								<p>标题文字标题文字标题文字标题文字</p>
+								<p>开始时间:2019/10/14/ (40天) <span>已完成</span></p>
+							</li>
+							<li><img src="img/员工账号管理.png"/ style="margin-right:10px; vertical-align: middle;"> <span>21人</span></li>
+							<li><img src="img/邀请.png"/ style="margin-right:10px; vertical-align: middle;"> <span>邀请</span></li>
+							<li><img src="img/企业图谱.png"/ style="margin-right:10px; vertical-align: middle;"> <span>文件按钮</span></li>
+							<li>					
+								<p class="p"><img src="img/shan.png"/ style="margin-right:10px;">删除</p>								
+							</li>
+							<li class="lii">管理</li>
+						</ul>
+						<ul>
+							<li>5</li>
+							<li><img src="img/后台_03.jpg"/></li>
+							<li>								
+								<p>标题文字标题文字标题文字标题文字</p>
+								<p>开始时间:2019/10/14/ (40天) <span>进行中</span></p>
+							</li>
+							<li><img src="img/员工账号管理.png"/ style="margin-right:10px; vertical-align: middle;"> <span>21人</span></li>
+							<li><img src="img/邀请.png"/ style="margin-right:10px; vertical-align: middle;"> <span>邀请</span></li>
+							<li><img src="img/企业图谱.png"/ style="margin-right:10px; vertical-align: middle;"> <span>文件按钮</span></li>
+							<li>					
+								<p class="p"><img src="img/shan.png"/ style="margin-right:10px;">删除</p>								
+							</li>
+							<li class="lii">管理</li>
+						</ul>
+						<ul>
+							<li>4</li>
+							<li><img src="img/后台_06.jpg"/></li>
+							<li>								
+								<p>标题文字标题文字标题文字标题文字</p>
+								<p>开始时间:2019/10/14/ (40天) <span>进行中</span></p>
+							</li>
+							<li><img src="img/员工账号管理.png"/ style="margin-right:10px; vertical-align: middle;"> <span>21人</span></li>
+							<li><img src="img/邀请.png"/ style="margin-right:10px; vertical-align: middle;"> <span>邀请</span></li>
+							<li><img src="img/企业图谱.png"/ style="margin-right:10px; vertical-align: middle;"> <span>文件按钮</span></li>
+							<li>					
+								<p class="p"><img src="img/shan.png"/ style="margin-right:10px;">删除</p>								
+							</li>
+							<li class="lii">管理</li>
+						</ul>
+						<ul>
+							<li>3</li>
+							<li><img src="img/后台_09.jpg"/></li>
+							<li>								
+								<p>标题文字标题文字标题文字标题文字</p>
+								<p>开始时间:2019/10/14/ (40天) <span>进行中</span></p>
+							</li>
+							<li><img src="img/员工账号管理.png"/ style="margin-right:10px; vertical-align: middle;"> <span>21人</span></li>
+							<li><img src="img/邀请.png"/ style="margin-right:10px; vertical-align: middle;"> <span>邀请</span></li>
+							<li><img src="img/企业图谱.png"/ style="margin-right:10px; vertical-align: middle;"> <span>文件按钮</span></li>
+							<li>					
+								<p class="p"><img src="img/shan.png"/ style="margin-right:10px;">删除</p>								
+							</li>
+							<li class="lii">管理</li>
+						</ul>-->						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				type:"get",
+				url:"new_file.json",
+				dataType:"json",
+				success:function(wo){
+				    $("button").click(function(){
+				    	for (var a=0;a<wo.length;a++) {
+						    if($("input").eq(0).val()==wo[a].name && $("input").eq(1).val()==wo[a].mi){
+					    		$("#tai").hide();
+					    		$(".span").html('欢迎'+wo[a].name+'登录');
+					    	}
+						}
+				    	
+				    })
+					
+				}
+			});
+			$('.lii').click(function(){
+				$(this).prev().find("p").toggleClass('p');
+				/*$(this).addClass('li2');*/
+				$(this).toggleClass('li2');
+				$(this).prev().prev().toggleClass('li1');
+				$(this).prev().prev().prev().toggleClass('li1');
+			});
+			$('.aa').click(function(){
+				$(this).css("color",'white');
+				$('.bb').css('color','#4C5B68');
+			})
+			$('.bb').click(function(){
+				$(this).css("color",'white');
+				$('.aa').css('color','#4C5B68');
+			})
+			$('.p').click(function(){
+				$(this).parent().parent().remove();
+			});
+			var index=1;
+			$('.jian').click(function(){
+				index++;
+				var ul1=$("<ul></ul>");
+				$('#xia').append(ul1);
+				for (var i=0;i<8;i++) {
+					var li1=$('<li></li>');
+					ul1.append(li1);
+					if(i==0){
+						li1.html(index);
+					}
+					if(i==1){
+						var img=$('<img/>');
+						$.ajax({
+							type:"get",
+							url:"zhao.json",
+							dataType:"json",
+							success:function(wo){
+								var sui=parseInt(Math.random()*3);
+								img.attr('src',wo[sui].src);
+							}
+						});						
+						li1.append(img);
+					}
+					if(i==2){
+						var p1=$('<p></p>');
+						p1.html("标题文字标题文字标题文字标题文字");
+						li1.append(p1);
+						var p2=$('<p></p>');
+						p2.html("开始时间:2019/10/14/ (40天)");						
+						var span=$("<span></span>");
+						$.ajax({
+							type:"get",
+							url:"wan.json",
+							dataType:"json",
+							success:function(wo){
+								var sui=parseInt(Math.random()*3);
+								span.html(wo[sui].src);
+								span.addClass('sj');
+								span.addClass(wo[sui].mi);
+							}
+						});						
+						p2.append(span);
+						li1.append(p2);
+						li1.addClass('sj');
+					}
+					if(i==3){
+						var img1=$("<img src='img/员工账号管理.png'/>");
+						var span1=$("<span></span>");
+						span1.html("21人");						
+						li1.append(img1);
+						li1.append(span1);
+					}
+					if(i==4){
+						var img2=$("<img src='img/邀请.png'/>");
+						var span2=$("<span></span>");
+						span2.html("邀请");						
+						li1.append(img2);
+						li1.append(span2);
+					}
+					if(i==5){
+						var img3=$("<img src='img/企业图谱.png'/>");
+						var span3=$("<span></span>");
+						span3.html("文字按钮");						
+						li1.append(img3);
+						li1.append(span3);
+					}
+					if(i==6){
+						var p=$("<p></p>");	
+						var img4=$("<img src='img/shan.png'/>");
+						img4.css("margin-right",'10px');
+						var span4=$('<span>删除</span>');
+						p.append(img4);
+						p.append(span4);
+						p.addClass('p');
+						li1.append(p);
+						$(p).click(function(){
+							$(this).parent().parent().remove();
+						});
+					}
+					if(i==7){
+						li1.addClass('lii');
+						li1.html("管理");
+						$(li1).click(function(){
+							$(this).prev().find("p").toggleClass('p');
+							/*$(this).addClass('li2');*/
+							$(this).toggleClass('li2');
+							$(this).prev().prev().toggleClass('li1');
+							$(this).prev().prev().prev().toggleClass('li1');
+						});
+					}
+				}				
+			})				
+		})
+	</script>
+</html>
